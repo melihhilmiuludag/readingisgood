@@ -1,0 +1,25 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5444/postgres
+    username: mhu
+    password: 41417
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 10
+        format_sql: true
+  sql:
+    init:
+      platform: postgres
+jwt:
+  token:
+    secret: 244226452948404D635166546A576E5A7234753778214125442A462D4A614E64
+
