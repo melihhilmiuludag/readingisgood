@@ -14,6 +14,7 @@ Project development by **Melih Hilmi Uludağ.**
 * JDK 17: amazoncorretto:17.0.8-alpine
 * Spring Boot 3.0.5
 * Apache maven 3.8.1
+* Netflix Feign Client
 * Spring Security
 * Lombok
 * Docker, docker-compose
