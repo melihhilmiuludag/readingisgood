@@ -1,0 +1,357 @@
+{
+	"info": {
+		"_postman_id": "a92e7ec8-fb1d-476f-babd-a42a18213a15",
+		"name": "mhu.core.readingisgood",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authanticate",
+			"item": [
+				{
+					"name": "user register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"melihhilmiuludag\",\n    \"email\": \"melihhilmiuludag@icloud.com\",\n    \"password\": \"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"melihhilmiuludag@icloud.com\",\n    \"password\": \"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "save book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtZWxpaGhpbG1pdWx1ZGFnQGljbG91ZC5jb20iLCJpYXQiOjE2OTYzNTkzOTcsImV4cCI6MTY5NjM2NjU5N30.1_PQGNi5paDgZvVsGE8LA7HOlwCGjUpt9bFDwgWy84Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Melih' in ilk kitabi\",\n    \"author\": \"Melih\",\n    \"price\": 19.99,\n    \"quantityInStock\": 50,\n    \"totalPages\": 500\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/service/book",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"service",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update stock the book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtZWxpaGhpbG1pdWx1ZGFnQGljbG91ZC5jb20iLCJpYXQiOjE2OTYzNTkzOTcsImV4cCI6MTY5NjM2NjU5N30.1_PQGNi5paDgZvVsGE8LA7HOlwCGjUpt9bFDwgWy84Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"updatedStock\": 50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/service/book/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"service",
+								"book",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "customer orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtZWxpaGhpbG1pdWx1ZGFnQGljbG91ZC5jb20iLCJpYXQiOjE2OTYzNTkzOTcsImV4cCI6MTY5NjM2NjU5N30.1_PQGNi5paDgZvVsGE8LA7HOlwCGjUpt9bFDwgWy84Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/service/customer/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"service",
+								"customer",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customer orders statistics",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtZWxpaGhpbG1pdWx1ZGFnQGljbG91ZC5jb20iLCJpYXQiOjE2OTYzNTkzOTcsImV4cCI6MTY5NjM2NjU5N30.1_PQGNi5paDgZvVsGE8LA7HOlwCGjUpt9bFDwgWy84Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/service/customer/orders/statistics?year=2023",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"service",
+								"customer",
+								"orders",
+								"statistics"
+							],
+							"query": [
+								{
+									"key": "year",
+									"value": "2023"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "To Order",
+			"item": [
+				{
+					"name": "order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtZWxpaGhpbG1pdWx1ZGFnQGljbG91ZC5jb20iLCJpYXQiOjE2OTYzNjA0OTEsImV4cCI6MTY5NjM2NzY5MX0.xgGoYmTOz3dy4C9m6IaFE-3Zhn13bLfnvn2nz8cian4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bookId\": 1,\n    \"piece\": 5,\n    \"purchaseDate\": \"2023-01-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/service/order",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"service",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtZWxpaGhpbG1pdWx1ZGFnQGljbG91ZC5jb20iLCJpYXQiOjE2OTYzNjA0OTEsImV4cCI6MTY5NjM2NzY5MX0.xgGoYmTOz3dy4C9m6IaFE-3Zhn13bLfnvn2nz8cian4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/service/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"service",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orders between_two_dates",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtZWxpaGhpbG1pdWx1ZGFnQGljbG91ZC5jb20iLCJpYXQiOjE2OTYzNjA0OTEsImV4cCI6MTY5NjM2NzY5MX0.xgGoYmTOz3dy4C9m6IaFE-3Zhn13bLfnvn2nz8cian4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bookId\": 3,\n    \"piece\": 5,\n    \"purchaseDate\": \"2023-01-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/service/orders/between_two_dates?startDate=2020-01-01&endDate=2023-01-01",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"service",
+								"orders",
+								"between_two_dates"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2020-01-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2023-01-01"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
